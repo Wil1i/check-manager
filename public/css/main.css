@@ -1,0 +1,30 @@
+:root{
+  --main : rgb(65, 141, 223);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+input{
+  border: 1px solid var(--main);
+  padding: 10px 20px;
+  border-radius: 7px;
+}
+
+button {
+  background-color: var(--main);
+  color: white;
+  border: 1px solid var(--main);
+  padding: 7px 15px;
+  min-width: 70px;
+  border-radius: 7px;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: white;
+  color: var(--main);
+}
