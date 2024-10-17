@@ -85,3 +85,13 @@ a{
   padding: 10px 20px;
   width: 100%;
 }
+
+.del-btn{
+  background-color: red;
+  border: 1px solid red;
+}
+
+.del-btn:hover{
+  background-color: transparent;
+  color: red;
+}

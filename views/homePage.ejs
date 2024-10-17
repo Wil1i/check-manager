@@ -6,7 +6,9 @@
 <body>
   <%- include("./templates/sideBar.ejs") %>
   <div id="check-container">
-    <h1>آخرین چک ها</h1>
+    <div>
+      <h1>آخرین چک ها</h1>
+    </div>
     <% if(checks[0]){ %>
       <% checks.forEach(check => { %>
         <%- include("./templates/checkTemplate.ejs", {check}) %>

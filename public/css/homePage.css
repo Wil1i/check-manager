@@ -5,6 +5,54 @@
   max-width: 70%;
 }
 
-#check-container > h1{
+#check-container > div:first-child{
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#check-container > div > a{
+  background-color: var(--main);
+  color: white;
+  margin-right: 15px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--main);
+  transition: all .2s ease-in-out;
+}
+
+#check-container > div > a:hover{
+  background-color: transparent;
+  color: var(--main);
+}
+
+#check-container > form{
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+#check-container > form > button{
+  margin-top: 20px;
+}
+
+#check-container > form > h3{
+  margin-bottom: 20px;
+}
+
+#single-buyer-container{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#single-buyer-container > div{
+  display: flex;
+}
+
+#single-buyer-container > div > p:last-child{
+  margin-right: 10px;
 }

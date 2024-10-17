@@ -10,6 +10,9 @@ Router.get("/logout", isUserLoggedIn, loginController.logout)
 const registerController = require("../controllers/registerController")
 Router.post("/register", isUserNotLoggedIn, registerController.post)
 
+const buyersController = require("../controllers/buyers/buyersController")
+Router.get("/buyers", isUserLoggedIn, buyersController.get)
+
 const homeController = require("../controllers/homeController")
 Router.get("/", isUserLoggedIn, homeController.get)
 
