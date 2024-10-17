@@ -1,7 +1,11 @@
 const Check = require("../models/Check")
 
-const get = (req, res) => {
-  res.render("homePage")
+const get = async (req, res) => {
+  const checks = await Check.findAll()
+
+  res.render("homePage", {
+    checks
+  })
 }
 
 const post = (req, res) => {
