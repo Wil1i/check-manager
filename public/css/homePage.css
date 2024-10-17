@@ -40,7 +40,21 @@
   margin-bottom: 20px;
 }
 
-#single-buyer-container{
+#check-container > form > div > input{
+  width: 20%;
+}
+
+#check-container > form > div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#check-container > form > div:not(:first-child){
+  margin-top: 10px;
+}
+
+.single-buyer-container{
   background-color: white;
   display: flex;
   align-items: center;
@@ -49,10 +63,10 @@
   border-radius: 10px;
 }
 
-#single-buyer-container > div{
+.single-buyer-container > div{
   display: flex;
 }
 
-#single-buyer-container > div > p:last-child{
+.single-buyer-container > div > p:last-child{
   margin-right: 10px;
 }

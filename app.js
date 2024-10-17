@@ -25,6 +25,9 @@ app.set("views", __dirname + "/views")
 
 require("./utils/passport")
 
+const checksRoutes = require("./routes/checks")
+app.use("/checks", checksRoutes)
+
 const buyersRoutes = require("./routes/buyers")
 app.use("/buyers", buyersRoutes)
 

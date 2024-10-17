@@ -1,4 +1,4 @@
-<div id="single-check-container">
+<div class="single-buyer-container">
   <div>
     <p>مبلغ چک:</p>
     <p><%= check.checkValue %></p>
@@ -23,4 +23,8 @@
     <p>شماره صاحب چک:</p>
     <p><%= check.customerNumber %></p>
   </div>
+
+  <form action="/checks/delete?id=<%= check.id %>" method="post">
+    <button class="del-btn">حذف</button>
+  </form>
 </div>

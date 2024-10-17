@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <%- include("../templates/header.ejs", {title : "آیفون استور", css : "homePage"}) %>
+</head>
+<body>
+  <%- include("../templates/sideBar.ejs") %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".date").pDatepicker({
+    observer: true,
+    format: 'YYYY/MM/DD',
+    altField: '.observer-example-alt'
+});
+    });
+  </script>
+
+  <div id="check-container">
+    <div>
+      <h1>خریدار ها</h1>
+      <a href="/checks">برگشت</a>
+    </div>
+    <form action="/checks/new" method="post">
+      <h3>اطلاعات چک را وارد کنید.</h3>
+      <div>
+        <input type="text" name="checkNumber" placeholder="شماره چک">
+        <input type="number" name="checkValue" placeholder="مبلغ چک">
+        <input type="text" name="checkDate" placeholder="تاریخ چک" class="date">
+      </div>
+      <div>
+        <input type="text" name="customerName" placeholder="نام صاحب چک">
+        <input type="tel" name="customerNumber" placeholder="شماره تماس صاحب چک">
+        <input type="text" style="opacity: 0;">
+      </div>
+      <button type="submit">ثبت</button>
+    </form>
+  </div>
+</body>
+</html>
