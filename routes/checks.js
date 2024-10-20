@@ -5,6 +5,9 @@ Router = new Router()
 const deleteCheckController = require("../controllers/checks/deleteController")
 Router.post("/delete", isUserLoggedIn, deleteCheckController.post)
 
+const restoreCheckController = require("../controllers/checks/restoreCheckController")
+Router.get("/restore", isUserLoggedIn, restoreCheckController.get)
+
 const sellCheckToController = require("../controllers/checks/sellCheckToController")
 Router.get("/sell/:id", isUserLoggedIn, sellCheckToController.get)
 Router.post("/sell/:id", isUserLoggedIn, sellCheckToController.post)

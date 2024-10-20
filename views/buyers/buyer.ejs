@@ -38,6 +38,7 @@
             <p>شماره صاحب چک: <%= check.customerNumber %></p>
             <p>درصد فروش: <%= check.soledPercent %>%</p>
             <p>مبلغ دریافتی: <%= check.soledPrice.toLocaleString() %><small>ریال</small></p>
+            <a href="/checks/restore?id=<%= check.id %>&return=/buyers/<%=check.buyerId%>" class="restore-check">عودت چک</a>
           </div>
         <% }) %>
       </div>

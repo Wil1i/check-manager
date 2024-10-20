@@ -16,7 +16,7 @@
 
   <div>
     <p>بدهکاری:</p>
-    <p><%= buyer.checks.map(c => c.soledPrice).reduce((a,b) => a + b, 0).toLocaleString() %></p>
+    <p><%= buyer.checks.map(c => c.soledPrice).reduce((a,b) => a + b, 0).toLocaleString() %><small>ریال</small></p>
   </div>
 
   <a href="/buyers/<%= buyer.id %>">جزئیات</a>
