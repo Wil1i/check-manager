@@ -70,3 +70,33 @@
 .single-buyer-container > div > p:last-child{
   margin-right: 10px;
 }
+
+.sellTo-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.sellTo-container > div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.sellTo-container > div:not(:last-child){
+  margin-bottom: 15px;
+}
+
+.sellTo-container > div > div > p{
+  margin-left: 10px;
+}
+
+.sellTo-container > div > div > select{
+  border: 1px solid var(--main);
+  padding: 2px 5px;
+  border-radius: 7px;
+}
+
+.sellTo-container > div > div > input{
+  padding: 2px 5px;
+}

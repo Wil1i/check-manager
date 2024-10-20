@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <%- include("../templates/header.ejs", {title : "آیفون استور", css : "homePage"}) %>
+</head>
+<body>
+  <%- include("../templates/sideBar.ejs") %>
+  <div id="check-container">
+    <div>
+      <h1>فروش چک <%=check.customerName%> <small>(<%= check.checkNumber %>)</small></h1>
+      <a href="/checks/sell">برگشت</a>
+    </div>
+
+    <form method="post" action="/checks/sell/<%= check.id %>" class="single-buyer-container sellTo-container">
+      <div>
+        <div>
+          <p>فروش به:</p>
+          <select name="buyer">
+            <option value="" selected hidden>یک مورد را انتخاب کنید</option>
+            <% buyers.forEach(buyer => { %>
+              <option value="<%= buyer.id %>"><%= buyer.name %></option>
+            <% }) %>
+          </select>
+        </div>
+  
+        <div>
+          <p>درصد فروش:</p>
+          <input type="number" name="percent" placeholder="مثال: ۱۰">
+        </div>
+  
+        <div>
+          <p>مبلغ دریافتی:</p>
+          <input type="number" name="money" placeholder="مثال: ۱۰۰۰۰۰۰۰">
+        </div>
+      </div>
+
+      <div>
+        <button type="submit">ثبت فروش</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

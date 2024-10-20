@@ -1,5 +1,6 @@
 const db = require("../configs/db")
 const {DataTypes} = require("sequelize")
+const Buyer = require("./Buyer")
 
 const Check = db.define("checks", {
   id : {
@@ -30,9 +31,15 @@ const Check = db.define("checks", {
 
   buyerId : {
     type : DataTypes.INTEGER,
-  }
+  },
 })
 
 Check.sync()
+
+Buyer.hasMany(Check, { as: "checks" })
+Check.belongsTo(Buyer, {
+    foreignKey: "buyerId",
+    as: "buyers"
+})
 
 module.exports = Check

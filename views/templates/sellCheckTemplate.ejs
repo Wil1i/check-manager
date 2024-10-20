@@ -1,7 +1,7 @@
 <div class="single-buyer-container">
   <div>
     <p>مبلغ چک:</p>
-    <p><%= check.checkValue.toLocaleString() %> <small>ریال</small></p>
+    <p><%= check.checkValue %></p>
   </div>
 
   <div>
@@ -24,7 +24,5 @@
     <p><%= check.customerNumber %></p>
   </div>
 
-  <form action="/checks/delete?id=<%= check.id %>" method="post">
-    <button class="del-btn">حذف</button>
-  </form>
+  <a href="/checks/sell/<%= check.id %>">فروش</a>
 </div>
