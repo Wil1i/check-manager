@@ -9,6 +9,10 @@ Router.post("/new", isUserLoggedIn, newBuyersController.post)
 const deleteBuyersController = require("../controllers/buyers/deleteBuyerController")
 Router.post("/delete", isUserLoggedIn, deleteBuyersController.post)
 
+const receiptController = require("../controllers/buyers/receiptController")
+Router.get("/:id/receipt", isUserLoggedIn, receiptController.get)
+Router.post("/:id/receipt", isUserLoggedIn, receiptController.post)
+
 const buyerController = require("../controllers/buyers/buyerController")
 Router.get("/:id", isUserLoggedIn, buyerController.get)
 

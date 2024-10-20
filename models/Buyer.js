@@ -1,4 +1,5 @@
 const db = require("../configs/db")
+const Receipt = require("./Receipt")
 const {DataTypes} = require("sequelize")
 
 const Buyer = db.define("buyers", {
@@ -18,5 +19,11 @@ const Buyer = db.define("buyers", {
 })
 
 Buyer.sync()
+
+Buyer.hasMany(Receipt, { as: "receipts" })
+Receipt.belongsTo(Buyer, {
+    foreignKey: "buyerId",
+    as: "buyers"
+})
 
 module.exports = Buyer

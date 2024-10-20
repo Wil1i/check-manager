@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <%- include("../templates/header.ejs", {title : "آیفون استور", css : "homePage"}) %>
+</head>
+<body>
+  <%- include("../templates/sideBar.ejs") %>
+  <div id="check-container">
+    <div>
+      <h1>ثبت دریافتی</h1>
+      <a href="/buyers/<%= buyerId %>">برگشت</a>
+    </div>
+    <form action="/buyers/<%= buyerId %>/receipt" method="post">
+      <h3>اطلاعات پرداختی  را وارد کنید.</h3>
+      <div>
+        <input type="number" name="value" placeholder="مبلغ">
+      </div>
+      <button type="submit">ثبت</button>
+    </form>
+  </div>
+</body>
+</html>
