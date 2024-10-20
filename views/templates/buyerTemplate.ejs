@@ -19,6 +19,7 @@
     <p><%= buyer.checks.map(c => c.soledPrice).reduce((a,b) => a + b, 0).toLocaleString() %></p>
   </div>
 
+  <a href="/buyers/<%= buyer.id %>">جزئیات</a>
   <form action="/buyers/delete?id=<%= buyer.id %>" method="post">
     <button class="del-btn">حذف</button>
   </form>

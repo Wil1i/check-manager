@@ -101,3 +101,22 @@
 .sellTo-container > div > div > input{
   padding: 2px 5px;
 }
+
+.single-buyer > div:first-child > div{
+  display: flex;
+  background-color: var(--main);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.single-buyer > div:first-child > div > a{
+  color: white;
+}
+
+.single-buyer > div:not(:first-child) > div{
+  border: 1px solid var(--main);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}

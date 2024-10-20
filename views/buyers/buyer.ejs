@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <%- include("../templates/header.ejs", {title : "آیفون استور", css : "homePage"}) %>
+</head>
+<body>
+  <%- include("../templates/sideBar.ejs") %>
+  <div id="check-container">
+    <div>
+      <h1><%= buyer.name %></h1>
+      <a href="/buyers/new">ثبت خریدار</a>
+    </div>
+    
+    <div class="single-buyer-container sellTo-container single-buyer">
+      <div>
+        <div>
+          <p>شماره تماس:</p>
+          <p><%= buyer.number %></p>
+        </div>
+
+        <div>
+          <p>تعداد چک ها:</p>
+          <p><%= buyer.checks.length %></p>
+        </div>
+
+        <div>
+          <a href="">ثبت دریافتی</a>
+        </div>
+      </div>
+
+      <div>
+        <% buyer.checks.forEach(check => { %>
+          <div>
+            <p>شماره چک: <%= check.checkNumber %></p>
+            <p>تاریخ چک: <%= check.checkDate %></p>
+            <p>مبلغ چک: <%= check.checkValue.toLocaleString() %><small>ریال</small></p>
+            <p>نام صاحب چک: <%= check.customerName %></p>
+            <p>شماره صاحب چک: <%= check.customerNumber %></p>
+            <p>درصد فروش: <%= check.soledPercent %>%</p>
+            <p>مبلغ دریافتی: <%= check.soledPrice.toLocaleString() %><small>ریال</small></p>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
