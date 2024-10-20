@@ -20,7 +20,11 @@ const post = async (req, res) => {
 
   if(!findBuyer) return req.flash("danger", "خریدار مورد نظر یافت نشد.")
 
-  await findCheck.update({buyerId : req.body.buyer})
+  await findCheck.update({
+    buyerId : req.body.buyer,
+    soledPrice : req.body.soledPrice,
+    soledPercent : req.body.soledPercent
+  })
 
   req.flash("success", "چک مورد نظر با موفقیت فروخته شد.")
   return res.redirect("/checks")

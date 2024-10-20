@@ -32,6 +32,14 @@ const Check = db.define("checks", {
   buyerId : {
     type : DataTypes.INTEGER,
   },
+
+  soledPrice : {
+    type : DataTypes.INTEGER
+  },
+
+  soledPercent : {
+    type : DataTypes.INTEGER
+  }
 })
 
 Check.sync()
