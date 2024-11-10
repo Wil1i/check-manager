@@ -12,7 +12,7 @@
     </div>
     <% if(checks[0]){ %>
       <% checks.forEach(check => { %>
-        <%- include("../templates/checkTemplate.ejs", {check}) %>
+        <%- include("../templates/checkTemplate.ejs", {check, convert}) %>
       <% }) %>
     <% }else{ %>
       <div class="err">چکی یافت نشد.</div>

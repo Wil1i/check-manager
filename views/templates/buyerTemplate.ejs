@@ -6,17 +6,17 @@
 
   <div>
     <p>شماره تماس:</p>
-    <p><%= buyer.number %></p>
+    <p><%= convert.toPersian(buyer.number) %></p>
   </div>
 
   <div>
     <p>چک ها:</p>
-    <p><%= buyer.checks.length %></p>
+    <p><%= convert.toPersian(buyer.checks.length) %></p>
   </div>
 
   <div>
     <p>بدهکاری:</p>
-    <p><%= (buyer.checks.map(c => c.soledPrice).reduce((a,b) => a + b, 0) - buyer.receipts.map(c => c.value).reduce((a,b) => a + b, 0)).toLocaleString() %><small>ریال</small></p>
+    <p><%= convert.toPersian((buyer.checks.map(c => c.soledPrice).reduce((a,b) => a + b, 0) - buyer.receipts.map(c => c.value).reduce((a,b) => a + b, 0)).toLocaleString()) %><small>ریال</small></p>
   </div>
 
   <a href="/buyers/<%= buyer.id %>">جزئیات</a>

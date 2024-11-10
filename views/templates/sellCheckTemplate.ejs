@@ -1,27 +1,27 @@
 <div class="single-buyer-container">
   <div>
     <p>مبلغ چک:</p>
-    <p><%= check.checkValue.toLocaleString() %> <small>ریال</small></p>
+    <p><%= convert.toPersian(check.checkValue.toLocaleString()) %> <small>ریال</small></p>
   </div>
 
   <div>
     <p>شماره چک:</p>
-    <p><%= check.checkNumber %></p>
+    <p><%= convert.toPersian(check.checkNumber) %></p>
   </div>
 
   <div>
     <p>تاریخ چک:</p>
-    <p><%= check.checkDate %></p>
+    <p><%= convert.toPersian(check.checkDate) %></p>
   </div>
 
   <div>
     <p>صاحب چک:</p>
-    <p><%= check.customerName %></p>
+    <p><%= convert.toPersian(check.customerName) %></p>
   </div>
 
   <div>
     <p>شماره صاحب چک:</p>
-    <p><%= check.customerNumber %></p>
+    <p><%= convert.toPersian(check.customerNumber) %></p>
   </div>
 
   <a href="/checks/sell/<%= check.id %>">فروش</a>

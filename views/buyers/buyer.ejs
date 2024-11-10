@@ -15,12 +15,17 @@
       <div>
         <div>
           <p>شماره تماس:</p>
-          <p><%= buyer.number %></p>
+          <p><%= convert.toPersian(buyer.number) %></p>
         </div>
 
         <div>
           <p>تعداد چک ها:</p>
-          <p><%= buyer.checks.length %></p>
+          <p><%= convert.toPersian(buyer.checks.length) %></p>
+        </div>
+
+        <div>
+          <p>بدهکاری:</p>
+          <p><%= convert.toPersian((buyer.checks.map(c => c.soledPrice).reduce((a,b) => a + b, 0) - buyer.receipts.map(c => c.value).reduce((a,b) => a + b, 0)).toLocaleString()) %> <small>ریال</small></p>
         </div>
 
         <div>
@@ -31,13 +36,13 @@
       <div>
         <% buyer.checks.forEach(check => { %>
           <div>
-            <p>شماره چک: <%= check.checkNumber %></p>
-            <p>تاریخ چک: <%= check.checkDate %></p>
-            <p>مبلغ چک: <%= check.checkValue.toLocaleString() %><small>ریال</small></p>
-            <p>نام صاحب چک: <%= check.customerName %></p>
-            <p>شماره صاحب چک: <%= check.customerNumber %></p>
-            <p>درصد فروش: <%= check.soledPercent %>%</p>
-            <p>مبلغ دریافتی: <%= check.soledPrice.toLocaleString() %><small>ریال</small></p>
+            <p>شماره چک: <%= convert.toPersian(check.checkNumber) %></p>
+            <p>تاریخ چک: <%= convert.toPersian(check.checkDate) %></p>
+            <p>مبلغ چک: <%= convert.toPersian(check.checkValue.toLocaleString()) %><small>ریال</small></p>
+            <p>نام صاحب چک: <%= convert.toPersian(check.customerName) %></p>
+            <p>شماره صاحب چک: <%= convert.toPersian(check.customerNumber) %></p>
+            <p>درصد فروش: <%= convert.toPersian(check.soledPercent) %>%</p>
+            <p>مبلغ دریافتی: <%= convert.toPersian(check.soledPrice.toLocaleString()) %><small>ریال</small></p>
             <a href="/checks/restore?id=<%= check.id %>&return=/buyers/<%=check.buyerId%>" class="restore-check">عودت چک</a>
           </div>
         <% }) %>
