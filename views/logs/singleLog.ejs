@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <%- include("../templates/header.ejs", {title : "آیفون استور", css : "homePage"}) %>
+</head>
+<body>
+  <%- include("../templates/sideBar.ejs") %>
+  <div id="check-container">
+    <div>
+      <h1><%= log.title %></h1>
+    </div>
+    
+    <div class="single-buyer-container sellTo-container single-buyer">
+      <%= log.description %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <%- include("./templates/header.ejs", {title : "آیفون استور", css : "homePage"}) %>
+  <%- include("../templates/header.ejs", {title : "آیفون استور", css : "homePage"}) %>
 </head>
 <body>
-  <%- include("./templates/sideBar.ejs") %>
+  <%- include("../templates/sideBar.ejs") %>
   <div id="check-container">
     <div>
       <h1>سوابق</h1>
     </div>
     <% if(logs[0]){ %>
       <% logs.forEach(log => { %>
-        <%- include("./templates/logTemplate.ejs", {log}) %>
+        <%- include("../templates/logTemplate.ejs", {log}) %>
       <% }) %>
     <% }else{ %>
       <div class="err">سابقه‌ای یافت نشد.</div>
