@@ -1,5 +1,6 @@
 const Check = require("../../models/Check")
 const Buyer = require("../../models/Buyer")
+const log = require("../../utils/log")
 
 const get = async (req, res) => {
   const check = await Check.findByPk(req.params.id)
@@ -25,6 +26,8 @@ const post = async (req, res) => {
     soledPrice : req.body.soledPrice,
     soledPercent : req.body.soledPercent
   })
+
+  log.submit("sell-check", req.user.id, `چک ${findCheck.customerName} فروخته شد.`, `چک ${findCheck.customerName} با شماره چک ${findCheck.checkNumber} به ${req.body.buyer} با درصد ${req.body.soledPercent} به مبلغ ${req.body.soledPrice} توسط ${req.user.username} فروخته شد.`)
 
   req.flash("success", "چک مورد نظر با موفقیت فروخته شد.")
   return res.redirect("/checks")
