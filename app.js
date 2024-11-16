@@ -34,6 +34,9 @@ app.use("/checks", checksRoutes)
 const buyersRoutes = require("./routes/buyers")
 app.use("/buyers", buyersRoutes)
 
+const reportsRoutes = require("./routes/reports")
+app.use("/reports", reportsRoutes)
+
 const indexRoutes = require("./routes/index")
 app.use("/", indexRoutes)
 
